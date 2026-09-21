@@ -14,28 +14,30 @@
         android:id="@+id/helloText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
         android:text="Hello Smart Pantry!"
         android:textColor="@color/pinkPrimary"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/startButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/startButton" />
+        app:layout_constraintVertical_bias="0.557" />
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Started"
         android:background="@drawable/rounded_button"
         android:backgroundTint="@color/neutralBackground"
+        android:text="Get Started"
         android:textColor="@color/pinkPrimary"
-        app:layout_contraintTop_toBottomOf="@id/helloText"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        />
+        app:layout_constraintHorizontal_bias="0.577"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helloText"
+        tools:layout_editor_absoluteY="259dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
