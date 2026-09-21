@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Customize button style-->
+    <style name ="GreyButtonPinkText" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/neutralBackground</item>
+        <item name="android:textColor">@color/pinkPrimary</item>
+
+    </style>
+</resources>
