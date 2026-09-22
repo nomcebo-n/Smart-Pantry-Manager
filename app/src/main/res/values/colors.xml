@@ -6,6 +6,8 @@
     <color name="pinkSecondary">#FFE4E1</color>
     <color name="neutralBackground">#F5F5F5</color>
     <color name="textDark">#333333</color>
+    <color name="lightGrey">#D3D3D3</color>
+
 
 
 </resources>
