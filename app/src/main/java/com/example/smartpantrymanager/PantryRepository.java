@@ -1,24 +1,28 @@
 package com.example.smartpantrymanager;
 
-import android.os.Bundle;
+import android.content.ContentValues;
+import android.content.ContextValues;
+import android.content.Context;
+import android.database..Cursor;
+import  android.database.sqlite.SQLiteDatabase;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+public class PantryRepository  {
+    private final PantryDbHelper dbHelper;
 
-public class PantryRepository extends AppCompatActivity {
+    public PantryRepository(Context context){
+        dbHelper = new PantryDbHelper(context);
+    }
+    public long addItems(String name, int quantity, String expiryDate){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("itemName",name);
+        values.put("quantity",quantity);
+        values.put("expiryDate",expiryDate);
+        return db.update("pantry", values,"id=?", new String[]{String.valueOf(id)});
+    }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_pantry_repository);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    public int deleteItem(int id){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        return db.delete("pantry", "id=?", new String[]{String.valueOf(id)});
     }
 }
