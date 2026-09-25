@@ -1,10 +1,10 @@
 package com.example.smartpantrymanager;
 
 import android.content.ContentValues;
-import android.content.ContextValues;
 import android.content.Context;
-import android.database..Cursor;
+import android.database.Cursor;
 import  android.database.sqlite.SQLiteDatabase;
+
 
 public class PantryRepository  {
     private final PantryDbHelper dbHelper;
@@ -18,11 +18,25 @@ public class PantryRepository  {
         values.put("itemName",name);
         values.put("quantity",quantity);
         values.put("expiryDate",expiryDate);
-        return db.update("pantry", values,"id=?", new String[]{String.valueOf(id)});
+        return db.insert("pantry", null, values);
     }
 
     public int deleteItem(int id){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         return db.delete("pantry", "id=?", new String[]{String.valueOf(id)});
     }
+
+    public Cursor getAllItems(){
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        return db.query(
+                "pantry",  // The b+table name
+                null,           // All the columns
+                null,              // Selection
+                null,              // Selection args
+                null,              //Group by
+                null,           // Having
+                "itemName ASC"  // Order by
+        );
+    }
+
 }
