@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import  android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class PantryRepository  {
     private final PantryDbHelper dbHelper;
@@ -15,16 +18,13 @@ public class PantryRepository  {
     public long addItems(String name, int quantity, String expiryDate){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("itemName",name);
-        values.put("quantity",quantity);
-        values.put("expiryDate",expiryDate);
-        return db.insert("pantry", null, values);
+        values.put(PantryDbHelper.COLUMN_NAME,name);
+        values.put(PantryDbHelper.COLUMN_QUANTITY,quantity);
+        values.put(PantryDbHelper.COLUMN_EXPIRY,expiryDate);
+        return db.insert(PantryDbHelper.TABLE_NAME, null, values);
     }
 
-    public int deleteItem(int id){
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        return db.delete("pantry", "id=?", new String[]{String.valueOf(id)});
-    }
+    public List<Pantry>
 
     public Cursor getAllItems(){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
