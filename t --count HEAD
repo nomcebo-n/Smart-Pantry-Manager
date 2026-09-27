@@ -1,0 +1,59 @@
+[33mcommit c44c571cd057e35f6d7e4054add74989ee190bd1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Thu Sep 24 23:09:02 2026 +0200
+
+    Connected RecyclerView in PantryActivity to PantryAdapter and database
+
+[33mcommit ff6d19baf5dc0d948dbf16d8d29a38753f60ab72[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Thu Sep 24 22:51:02 2026 +0200
+
+    Added RecyclerView to pantry layout for displaying items
+
+[33mcommit c3eae443ccf610fca24161a2affa28bf0cec8db0[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Wed Sep 23 17:10:13 2026 +0200
+
+    Implemented CRUD operations for pantry items
+
+[33mcommit 10060742cec5963624537a7949ea66c34899c71c[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Wed Sep 23 06:48:33 2026 +0200
+
+    Updated ConstraintLayout background to light grey theme
+
+[33mcommit 65f6d128267a5b44939ab9c7e6338eac832d7bb4[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Wed Sep 23 01:13:50 2026 +0200
+
+    Updated ConstraintLayout background to light grey theme
+
+[33mcommit 7ac3710161a72034008e7e434c764db64c3346a2[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Wed Sep 23 01:10:28 2026 +0200
+
+    Day 4: Added SQLite database helper for pantry items
+
+[33mcommit 028fd77e0d5741f49c24e65a6e89ccedfb6ba7eb[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Mon Sep 21 23:16:28 2026 +0200
+
+    Day 1: Created MainActivity and linked to activity_main layout
+
+[33mcommit 512d0677e965f74d48ba0ced1c710b848e895038[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Mon Sep 21 17:59:46 2026 +0200
+
+    Add rounded button with grey background and pink outline
+
+[33mcommit 57c7b4956c0d552f3be7352fb7df2cf67579336c[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Mon Sep 21 17:49:30 2026 +0200
+
+    Fix ConstraintLayout issues and the buttons layout . Added pink and grey
+
+[33mcommit f4e6b29aff57fa1300ad16ed86af7f2458c0f430[m
+Author: Cebo N <nomcebomkhoma@gmail.com>
+Date:   Mon Sep 21 16:57:12 2026 +0200
+
+    Add base Android Studio project with MainActivity (Java)

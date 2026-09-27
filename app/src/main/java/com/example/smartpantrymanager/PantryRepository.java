@@ -24,19 +24,21 @@ public class PantryRepository  {
         return db.insert(PantryDbHelper.TABLE_NAME, null, values);
     }
 
-    public List<Pantry>
-
-    public Cursor getAllItems(){
+    public List<PantryItem> getAllItems() {
+        List<PantryItem> items = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        return db.query(
-                "pantry",  // The b+table name
-                null,           // All the columns
-                null,              // Selection
-                null,              // Selection args
-                null,              //Group by
-                null,           // Having
-                "itemName ASC"  // Order by
-        );
+        Cursor cursor = db.query(PantryDbHelper.TABLE_NAME, null, null, null, null, null, null);
+
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow(PantryDbHelper.COLUMN_ID));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow(PantryDbHelper.COLUMN_NAME));
+            int quantity = cursor.getInt(cursor.getColumnIndexOrThrow(PantryDbHelper.COLUMN_QUANTITY));
+            String expiry = cursor.getString(cursor.getColumnIndexOrThrow(PantryDbHelper.COLUMN_EXPIRY));
+            items.add(new PantryItem(id, name, quantity, expiry));
+        }
+        cursor.close();
+        return items;
+
     }
 
 }

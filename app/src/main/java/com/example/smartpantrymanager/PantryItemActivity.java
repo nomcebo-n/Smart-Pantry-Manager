@@ -1,24 +1,33 @@
 package com.example.smartpantrymanager;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class PantryItemActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.pantry_item);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        setContentView(R.layout.activity_pantry_item);
+
+        // Will get the data from PantryAdapter
+        String name = getIntent().getStringExtra("name");
+        int quantity = getIntent().getIntExtra("quantity",0);
+        String expiry = getIntent().getStringExtra("expiry");
+
+
+        // Bind to views
+        TextView detailName = findViewById(R.id.detailName);
+        TextView detailQuantity = findViewById(R.id.detailQuantity);
+        TextView detailExpiry = findViewById(R.id.detailExpiry);
+
+        detailName.setText(name);
+        detailQuantity.setText("Quantity: " +quantity);
+        detailExpiry.setText("Expiry : "+ expiry);
+
     }
 }

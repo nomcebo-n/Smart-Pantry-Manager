@@ -1,24 +1,24 @@
 package com.example.smartpantrymanager;
 
-import android.os.Bundle;
+public class PantryItem {
+    private  int id;
+    private  String name;
+    private  int quantity;
+    private  String expiryDate;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-public class PantryItem extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_pantry_item);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+    public PantryItem(int id , String name, int quantity ,String expiryDate){
+        this.id = id;
+        this.name = name;
+        this.quantity = quantity;
+        this.expiryDate = expiryDate;
     }
+
+    public int getId(){return id;}
+    public String getName(){return name;}
+    public int getQuantity(){return quantity;}
+    public  String getExpiryDate(){return  expiryDate;}
+
+
+
+
 }
